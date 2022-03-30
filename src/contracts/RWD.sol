@@ -1,9 +1,9 @@
 //SPDX-License-Identifier: UNLICENSED
 pragma solidity >=0.7.0 <0.9.0;
 
-contract Tether {
-    string public name = 'Tether';
-    string public symbol = 'USDT';
+contract RWD {
+    string public name = 'Reward Token';
+    string public symbol = 'RWD';
     uint256 public totalSupply = 1000000000000000000000000;
     uint8 public decimals = 18;
 
@@ -16,7 +16,7 @@ contract Tether {
     mapping(address => uint) public balanceOf;
     mapping(address => mapping(address => uint)) public allowances;
 
-    constructor() {
+    constructor(){
         balanceOf[msg.sender] = totalSupply;
     }
 
