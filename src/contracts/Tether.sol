@@ -2,7 +2,7 @@
 pragma solidity >=0.7.0 <0.9.0;
 
 contract Tether {
-    string public name = 'Tether';
+    string public name = 'Tether Token';
     string public symbol = 'USDT';
     uint256 public totalSupply = 1000000000000000000000000;
     uint8 public decimals = 18;
@@ -39,7 +39,7 @@ contract Tether {
         require(allowances[_from][msg.sender] >= _value);
         balanceOf[_from] -= _value;
         balanceOf[_to] += _value;
-        allowances[msg.sender][_from] -= _value;
+        allowances[_from][msg.sender] -= _value;
         emit Transfer(_from, _to, _value);
         return true;
     }
