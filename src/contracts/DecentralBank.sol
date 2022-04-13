@@ -48,4 +48,12 @@ contract DecentralBank {
             }
         }
     }
+
+    function unstakeTokens() public {
+        uint balance = stakingBalance[msg.sender];
+        require(balance > 0);
+        tether.transfer(msg.sender, balance);
+        stakingBalance[msg.sender] = 0;
+        isStaking[msg.sender] = false;
+    }
 }

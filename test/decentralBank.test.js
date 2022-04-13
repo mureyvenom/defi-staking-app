@@ -69,6 +69,8 @@ contract("DecentralBank", ([owner, customer]) => {
 
       await decentralBank.issueTokens({ from: owner });
       await decentralBank.issueTokens({ from: customer }).should.be.rejected;
+
+      await decentralBank.unstakeTokens({ from: owner });
     });
   });
 });
